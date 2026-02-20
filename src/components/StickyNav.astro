@@ -1,0 +1,31 @@
+---
+import { siteConfig } from '../data/site';
+import GitHubIcon from './icons/GitHubIcon.astro';
+import LinkedInIcon from './icons/LinkedInIcon.astro';
+import EmailIcon from './icons/EmailIcon.astro';
+---
+
+<nav class="sticky-nav" id="stickyNav">
+  <div class="nav-content">
+    <div class="nav-left">
+      <span class="nav-name">{siteConfig.name}</span>
+    </div>
+    <div class="nav-sections">
+      <a href="#hero" class="nav-link active" data-section="hero">Home</a>
+      <a href="#experience" class="nav-link" data-section="experience">Experience</a>
+      <a href="#opensource" class="nav-link" data-section="opensource">Open Source</a>
+      <a href="#education" class="nav-link" data-section="education">Education</a>
+    </div>
+    <div class="nav-right">
+      <a href={siteConfig.github.url} target="_blank" aria-label="GitHub">
+        <GitHubIcon />
+      </a>
+      <a href={siteConfig.linkedin.url} target="_blank" aria-label="LinkedIn">
+        <LinkedInIcon />
+      </a>
+      <button class="email-btn" aria-label="Email">
+        <EmailIcon />
+      </button>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,36 @@
+---
+import { siteConfig } from '../data/site';
+import GitHubIcon from './icons/GitHubIcon.astro';
+import LinkedInIcon from './icons/LinkedInIcon.astro';
+import EmailIcon from './icons/EmailIcon.astro';
+import ChevronDownIcon from './icons/ChevronDownIcon.astro';
+---
+
+<section class="section hero-section" id="hero">
+  <div class="hero-content">
+    <img src="/profile_pic.jpeg" alt={siteConfig.name} class="profile-pic" />
+    <h1 class="hero-name">{siteConfig.name}</h1>
+    <p class="hero-title">{siteConfig.title}</p>
+    <p class="hero-company">
+      <a href={siteConfig.companyUrl} target="_blank">@ {siteConfig.company}</a>
+    </p>
+    <div class="social-links">
+      <a href={siteConfig.github.url} target="_blank" aria-label="GitHub">
+        <GitHubIcon />
+        <span>GitHub</span>
+      </a>
+      <a href={siteConfig.linkedin.url} target="_blank" aria-label="LinkedIn">
+        <LinkedInIcon />
+        <span>LinkedIn</span>
+      </a>
+      <button class="email-btn" aria-label="Email">
+        <EmailIcon />
+        <span>Email</span>
+      </button>
+    </div>
+    <div class="scroll-hint">
+      <span>scroll down</span>
+      <ChevronDownIcon class="scroll-arrow" />
+    </div>
+  </div>
+</section>

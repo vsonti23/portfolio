@@ -1,0 +1,20 @@
+---
+import { education } from '../data/site';
+---
+
+<section class="section education-section" id="education">
+  <div class="section-content">
+    <h2 class="section-title">Education</h2>
+    <div class="education-grid">
+      {education.map((edu) => (
+        <div class="edu-card">
+          <img src={edu.logo} alt={edu.school} class="edu-logo" />
+          <h3 class="edu-school">{edu.school}</h3>
+          <p class="edu-degree">{edu.degree}</p>
+          <p class="edu-date">{edu.date}</p>
+          <p class="edu-gpa">{edu.gpa} GPA</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,47 @@
+---
+import { experience } from '../data/site';
+import ChevronLeftIcon from './icons/ChevronLeftIcon.astro';
+import ChevronRightIcon from './icons/ChevronRightIcon.astro';
+---
+
+<section class="section experience-section" id="experience">
+  <div class="section-content">
+    <h2 class="section-title">Experience</h2>
+    <div class="experience-carousel">
+      <div class="carousel-track" id="carouselTrack">
+        {experience.map((exp, i) => (
+          <div class="experience-card" data-index={i}>
+            <div class="card-header">
+              <img src={exp.companyLogo} alt={exp.company} class="company-logo" />
+              <h3 class="company-name">
+                <a href={exp.companyUrl} target="_blank">{exp.company}</a>
+              </h3>
+              <p class="job-title">{exp.title}</p>
+              <p class="job-duration">{exp.date}</p>
+            </div>
+            <div class="card-body">
+              <p class="company-desc">{exp.companyDescription}</p>
+              <div class="tech-tags">
+                {exp.tech.map(t => <span class="tech-tag">{t}</span>)}
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <button class="carousel-btn prev" id="prevBtn" aria-label="Previous">
+        <ChevronLeftIcon />
+      </button>
+      <div class="carousel-dots" id="carouselDots">
+        {experience.map((_, i) => (
+          <button class={`carousel-dot ${i === 0 ? 'active' : ''}`} data-index={i}></button>
+        ))}
+      </div>
+      <button class="carousel-btn next" id="nextBtn" aria-label="Next">
+        <ChevronRightIcon />
+      </button>
+    </div>
+    <p class="keyboard-hint">Use arrow keys to navigate</p>
+  </div>
+</section>

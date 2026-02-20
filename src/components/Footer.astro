@@ -1,0 +1,16 @@
+---
+import { siteConfig } from '../data/site';
+
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="footer-section" id="footer">
+  <div class="footer-content">
+    <div class="footer-tagline">
+      Shipping code, learning along the way.
+    </div>
+    <div class="footer-copyright">
+      &copy; {currentYear} {siteConfig.name}
+    </div>
+  </div>
+</footer>
