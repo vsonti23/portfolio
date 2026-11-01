@@ -2,7 +2,7 @@
 
 Personal site for Varshik Sonti. Built with Astro and deployed on Vercel.
 
-The page follows the system color scheme, and project details open in place. Content lives in `src/data/site.ts`.
+The page follows the system color scheme. Content lives in `src/data/site.ts`.
 
 ## Development
 
