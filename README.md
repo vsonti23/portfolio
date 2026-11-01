@@ -1,12 +1,8 @@
 # Portfolio
 
-Personal portfolio site built with Astro.
+Personal site for Varshik Sonti. Built with Astro and deployed on Vercel.
 
-## Tech
-
-- [Astro](https://astro.build)
-- [Catppuccin Mocha](https://catppuccin.com) color scheme
-- [JetBrains Mono](https://www.jetbrains.com/lp/mono/) font
+The page follows the system color scheme, and project details open in place. Content lives in `src/data/site.ts`.
 
 ## Development
 
