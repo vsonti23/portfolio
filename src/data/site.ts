@@ -42,7 +42,7 @@ export const site = {
       line: "Real-time messaging for a virtual workspace MVP: React Native, Socket.IO, and S3 media.",
     },
     {
-      company: "Arizona State University",
+      company: "ASU",
       role: "Software Engineer",
       years: "2022 – 2023",
       line: "Full-stack platform for a five-country river health monitoring initiative.",
@@ -73,7 +73,7 @@ export const site = {
   ],
   education: {
     degree: "M.S. Computer & Software Engineering",
-    school: "Arizona State University",
+    school: "ASU",
     year: "2023",
   },
   projects: [
