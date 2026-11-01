@@ -1,11 +1,13 @@
 ---
 import "../styles/global.css";
+import ProjectCard from "../components/ProjectCard.astro";
 import { site } from "../data/site";
 
 const title = `${site.name} — ${site.title}`;
 const canonical = new URL("/", site.url).href;
 const image = new URL("/og-image.png", site.url).href;
-const [sst, opensearch, tekton] = site.contributions;
+const featured = site.projects.filter((project) => project.featured);
+const more = site.projects.filter((project) => !project.featured);
 ---
 
 <!DOCTYPE html>
@@ -51,7 +53,7 @@ const [sst, opensearch, tekton] = site.contributions;
         <p class="muted" id="role">{site.title}{" · "}{site.location}</p>
         <div id="intro">
           <p class="lede">{site.intro}</p>
-          <p class="lede">{site.now} <a href={site.terros.href} target="_blank" rel="noopener">{site.terros.label}</a>. {site.outside}</p>
+          <p class="lede">{site.now} <a href={site.terros.href} target="_blank" rel="noopener">{site.terros.label}</a>{site.nowRest}</p>
         </div>
         <ul class="links">
           {
@@ -69,32 +71,32 @@ const [sst, opensearch, tekton] = site.contributions;
         </ul>
       </header>
 
-      <section class="reveal" aria-labelledby="work-h">
-        <h2 id="work-h">What I've worked on</h2>
-        <p class="muted">{site.work}</p>
-      </section>
-
-      <section class="reveal" aria-labelledby="tinker-h">
-        <h2 id="tinker-h">Tinkering</h2>
-        <ul class="rows">
-          {
-            site.tinkering.map((project) => (
-              <li class="row muted">
-                <a href={project.href} target="_blank" rel="noopener">{project.name}</a>: {project.line}
-              </li>
-            ))
-          }
-          <li class="row muted">
-            {site.experiments.privateName} and <a href={site.experiments.href} target="_blank" rel="noopener">{site.experiments.name}</a>: {site.experiments.line}
-          </li>
+      <section class="reveal" aria-labelledby="featured-h">
+        <h2 id="featured-h">Featured</h2>
+        <ul class="projects">
+          {featured.map((project) => <ProjectCard project={project} />)}
         </ul>
       </section>
 
-      <section class="reveal" aria-labelledby="contrib-h">
-        <h2 id="contrib-h">Contributions</h2>
-        <p class="muted">
-          I've sent fixes upstream to <a href={sst.href} target="_blank" rel="noopener">{sst.label}</a>, <a href={opensearch.href} target="_blank" rel="noopener">{opensearch.label}</a>, and <a href={tekton.href} target="_blank" rel="noopener">{tekton.label}</a>.
-        </p>
+      <section class="reveal" aria-labelledby="more-h">
+        <h2 id="more-h">More projects</h2>
+        <ul class="projects">
+          {more.map((project) => <ProjectCard project={project} />)}
+        </ul>
+      </section>
+
+      <section class="reveal" aria-labelledby="os-h">
+        <h2 id="os-h">Open source</h2>
+        <ul class="rows">
+          {
+            site.openSource.map((item) => (
+              <li class="row">
+                <div class="row-top"><a class="title" href={item.href} target="_blank" rel="noopener">{item.repo}<span class="pr"> #{item.pr}</span></a><span class="date">{item.date}</span></div>
+                <p class="desc">{item.desc}</p>
+              </li>
+            ))
+          }
+        </ul>
       </section>
 
       <footer class="reveal">
