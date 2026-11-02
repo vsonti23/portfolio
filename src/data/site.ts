@@ -1,8 +1,8 @@
 export const site = {
   name: "Varshik Sonti",
-  title: "Backend Engineer",
+  title: "Software Engineer",
   description:
-    "Varshik Sonti, backend engineer in Irvine, CA. Building maintainable, observable systems with distributed and serverless architectures.",
+    "Varshik Sonti, software engineer in Irvine, CA. Building maintainable, observable systems with distributed and serverless architectures.",
   url: "https://varshiksonti.dev",
   location: "Irvine, CA",
   email: "varshiksonti@gmail.com",
