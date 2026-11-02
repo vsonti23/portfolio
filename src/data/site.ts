@@ -1,52 +1,25 @@
 export const site = {
   name: "Varshik Sonti",
-  title: "Software Engineer",
+  title: "Backend Engineer",
   description:
-    "Varshik Sonti, Software Engineer at Terros in Irvine, CA. Distributed systems, cloud infrastructure, and systems projects in Rust and Go.",
+    "Varshik Sonti, backend engineer in Irvine, CA. Building maintainable, observable systems with distributed and serverless architectures.",
   url: "https://varshiksonti.dev",
-  role: "Software Engineer at",
-  company: {
+  location: "Irvine, CA",
+  email: "varshiksonti@gmail.com",
+  terros: {
     label: "Terros",
     href: "https://terros.com",
   },
-  location: "Irvine, CA",
+  github: "https://github.com/vsonti23",
   intro:
-    "I'm interested in distributed systems and cloud infrastructure: large-scale data processing, distributed search, and high-throughput pipelines.",
-  about: [
-    "At Terros I own systems from first architecture through production scaling, across ingestion and export pipelines, search infrastructure, and reliability.",
-    "Outside work I go deep on storage, networking, and concurrency through hands-on projects in Rust and Go.",
-  ],
+    "I build systems that solve real problems for consumers, using distributed and serverless architectures, and I care a lot about making them maintainable and easy to observe.",
+  now: "Right now I'm at",
+  nowRest:
+    ", working on the backend behind consumer-facing products on AWS. Before that I built backends at Roomie Hub and Whistle, and did my master's at ASU. Outside of work, I dig into systems internals and like tinkering in Rust and Go.",
   links: [
     { label: "GitHub", href: "https://github.com/vsonti23" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/varshik-s" },
     { label: "Email", href: "mailto:varshiksonti@gmail.com" },
-  ],
-  experience: [
-    {
-      company: "Terros",
-      href: "https://terros.com",
-      role: "Software Engineer",
-      years: "2024 – Now",
-      line: "Distributed search over 150M+ U.S. addresses at ~200 ms, plus ingestion and export pipelines on AWS.",
-    },
-    {
-      company: "Roomie Hub",
-      role: "Software Engineer",
-      years: "2023 – 2024",
-      line: "Cross-platform roommate app for college students, piloted with Tempe-area housing departments.",
-    },
-    {
-      company: "Whistle",
-      role: "Junior Software Developer",
-      years: "2023",
-      line: "Real-time messaging for a virtual workspace MVP: React Native, Socket.IO, and S3 media.",
-    },
-    {
-      company: "ASU",
-      role: "Software Engineer",
-      years: "2022 – 2023",
-      line: "Full-stack platform for a five-country river health monitoring initiative.",
-    },
   ],
   openSource: [
     {
@@ -71,11 +44,6 @@ export const site = {
       desc: "Capped Kubernetes Event message size so YAML parse errors can no longer bloat etcd.",
     },
   ],
-  education: {
-    degree: "M.S. Computer & Software Engineering",
-    school: "ASU",
-    year: "2023",
-  },
   projects: [
     {
       repo: "rust-wal",

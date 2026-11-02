@@ -8,7 +8,6 @@ const canonical = new URL("/", site.url).href;
 const image = new URL("/og-image.png", site.url).href;
 const featured = site.projects.filter((project) => project.featured);
 const more = site.projects.filter((project) => !project.featured);
-const github = site.links[0].href;
 ---
 
 <!DOCTYPE html>
@@ -51,8 +50,11 @@ const github = site.links[0].href;
     <main>
       <header class="intro reveal">
         <h1 id="name">{site.name}</h1>
-        <p class="muted" id="role">{site.role} <a href={site.company.href} target="_blank" rel="noopener">{site.company.label}</a>{" · "}{site.location}</p>
-        <p class="lede" id="intro">{site.intro}</p>
+        <p class="muted" id="role">{site.title}{" · "}{site.location}</p>
+        <div id="intro">
+          <p class="lede">{site.intro}</p>
+          <p class="lede">{site.now} <a href={site.terros.href} target="_blank" rel="noopener">{site.terros.label}</a>{site.nowRest}</p>
+        </div>
         <ul class="links">
           {
             site.links.map((link) => (
@@ -68,25 +70,6 @@ const github = site.links[0].href;
           }
         </ul>
       </header>
-
-      <section class="reveal" aria-labelledby="about-h">
-        <h2 id="about-h">About</h2>
-        <p class="muted">{site.about.join(" ")}</p>
-      </section>
-
-      <section class="reveal" aria-labelledby="exp-h">
-        <h2 id="exp-h">Experience</h2>
-        <ul class="rows">
-          {
-            site.experience.map((item) => (
-              <li class="row">
-                <div class="row-top"><span class="title">{item.href ? <a href={item.href} target="_blank" rel="noopener">{item.company}</a> : item.company}</span><span class="role">{item.role}</span><span class="date">{item.years}</span></div>
-                <p class="desc">{item.line}</p>
-              </li>
-            ))
-          }
-        </ul>
-      </section>
 
       <section class="reveal" aria-labelledby="featured-h">
         <h2 id="featured-h">Featured</h2>
@@ -116,14 +99,9 @@ const github = site.links[0].href;
         </ul>
       </section>
 
-      <section class="reveal" aria-labelledby="edu-h">
-        <h2 id="edu-h">Education</h2>
-        <p class="edu"><span>{site.education.degree}, <span class="muted">{site.education.school}</span></span><span class="date">{site.education.year}</span></p>
-      </section>
-
       <footer class="reveal">
         <p class="muted">
-          More of my code is on <a href={github} target="_blank" rel="noopener">GitHub</a>.
+          Say hi at <a href={`mailto:${site.email}`}>{site.email}</a>, or find more on <a href={site.github} target="_blank" rel="noopener">GitHub</a>.
         </p>
       </footer>
     </main>
